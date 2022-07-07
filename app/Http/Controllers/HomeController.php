@@ -13,6 +13,6 @@ class HomeController extends Controller
         $data = json_decode(file_get_contents(public_path('/static-data/techcrunch-top-articles-2022-07-07.json')));
 
         // return the view
-        return view('start', compact($data));
+        return view('start', compact('data'));
     }
 }
