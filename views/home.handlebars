@@ -1,0 +1,13 @@
+<h1>NewsAPI - Techcrunch top stories (static data from 2022-07-07)</h1>
+
+{{#each articles}}
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <p><img src="{{urlToImage}}" /></p>
+                <h5>{{title}}</h5>
+                <h6 class="text-muted">{{description}}</h6>
+            </div>
+        </div>
+    </div>
+{{/each}}
