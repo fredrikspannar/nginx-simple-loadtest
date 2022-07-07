@@ -15,24 +15,14 @@
     </head>
     <body>
 
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    PHP/Laravel ((Nginx - simple loadtest))
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <div id="app">
 
-            </div>
-        </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
-
+            <main class="py-4">
+                <div class="container">
+                    @yield('content')
+                </div>
+            </main>
+        </div>
 
     </body>
 </html>
