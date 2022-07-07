@@ -1,4 +1,8 @@
 import { serverApp } from './app.js';
+import dotenv from 'dotenv';
+
+// get .env-file
+dotenv.config();
 
 // start multiple instances?
 const PORT1 = process.env.LOADTEST_PORT1;
