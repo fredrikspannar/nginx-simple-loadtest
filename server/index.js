@@ -1,26 +1,20 @@
-import express from 'express';
-import { engine } from 'express-handlebars';
+import { serverApp } from './app.js';
 
-const app = express();
-import data from './../techcrunch-top-articles-2022-07-07.json' assert {type: 'json'};
+// start multiple instances?
+const PORT1 = process.env.LOADTEST_PORT1;
+const PORT2 = process.env.LOADTEST_PORT2;
+const PORT3 = process.env.LOADTEST_PORT3;
+const PORT4 = process.env.LOADTEST_PORT4;
+const PORT5 = process.env.LOADTEST_PORT5;
 
-// setup handlebars template engine
-app.engine('handlebars', engine());
-app.set('view engine', 'handlebars');
-app.set('views', './views');
+// no enviroment-variable set at all?
+if ( PORT1 == undefined ) throw new Error("Atleast one LOADTEST_PORT1*-enviroment is required ( max 5 ports)");
 
-// setup static files
-app.use(express.static('public'));
+// start instance(s)
+serverApp(PORT1);
 
-// default route
-app.get('/', (req, res) => {
-    const articles = data.articles;
-
-    // render handlebars with static json data
-    res.render('home',{"articles":articles});
-});
-
-// start server
-app.listen(process.env.PORT, () => {
-    console.log(`App is running on port ${process.env.PORT}`)
-});
+// any more? ( optional )
+if (PORT2 != undefined) serverApp(PORT2);
+if (PORT3 != undefined) serverApp(PORT3);
+if (PORT4 != undefined) serverApp(PORT4);
+if (PORT5 != undefined) serverApp(PORT5);
