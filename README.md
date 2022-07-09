@@ -9,6 +9,15 @@ I do not expect the results to be completely fair but a rough estimate of load b
 
 ## Node Backend
 
+## Install
+
+Install all dependencies with:
+
+```
+#npm install
+```
+
+### Configuration
 Create an .env in the root directory of the cloned branch with the appropiate number of ports which will span that number of instances, you should probably use all 5 to span 5 instances
 so it is somewhat similar to the PHP backend.
 
@@ -46,6 +55,8 @@ server {
 }
 
 ```
+
+### Running
 
 All instances can be run with only:
 
