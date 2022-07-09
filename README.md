@@ -22,46 +22,4 @@ it can be somewhat similiar to the Node backend.
 
 Checkout the branch [>-- Here --<](https://github.com/fredrikspannar/nginx-simple-loadtest/tree/backend-node)
 
-Create an .env in the root directory of the cloned branch with the appropiate number of ports which will span that number of instances ( you should probably use all 5 to span 5 instances
-so it is somewhat similar to the PHP backend )
-
-Example .env:
-
-```
-LOADTEST_PORT1=9000
-LOADTEST_PORT2=9001
-LOADTEST_PORT3=9002
-LOADTEST_PORT4=9003
-LOADTEST_PORT5=9004
-```
-
-Next setup the Nginx-configuration with an upstream proxy (replace "[YOUR DOMAIN HERE]" with your domain though):
-
-```
-upstream app1 {
-        server 127.0.0.1:9000;
-        server 127.0.0.1:9001;
-        server 127.0.0.1:9002;
-        server 127.0.0.1:9003;
-        server 127.0.0.1:9004;
-}
-
-server {
-        listen 80;
-        listen [::]:80;
-
-        server_name [YOUR DOMAIN HERE];
-
-        location / {
-                proxy_pass http://app1;
-        }
-
-}
-
-```
-
-All instances can be run with only:
-
-```
-#npm start
-```
+Read the README for the Node-branch for configuration options.
