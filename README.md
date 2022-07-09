@@ -22,4 +22,4 @@ it can be somewhat similiar to the Node backend.
 
 Checkout the branch [>-- Here --<](https://github.com/fredrikspannar/nginx-simple-loadtest/tree/backend-node)
 
-Read the README for the Node-branch for configuration options.
+Read the [README for the Node-branch](https://github.com/fredrikspannar/nginx-simple-loadtest/blob/backend-node/README.md) for configuration options.
