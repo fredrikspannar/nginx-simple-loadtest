@@ -23,3 +23,28 @@ it can be somewhat similiar to the Node backend.
 Checkout the branch [>-- Here --<](https://github.com/fredrikspannar/nginx-simple-loadtest/tree/backend-node)
 
 Read the [README for the Node-branch](https://github.com/fredrikspannar/nginx-simple-loadtest/blob/backend-node/README.md) for configuration options.
+
+## Setup of server that should be tested
+
+Nginx at the target server needs to be configured properly or else you will get an "connection reset by peer", ie. the server was not configured to handle
+so many requests.
+
+Edit /etc/nginx/nginx.conf and change worker_connections in the events block:
+
+```
+...
+events {
+        worker_connections 20000;
+}
+...
+```
+
+This will make sure that Nginx can handle up to 20000 connections. Make sure to run nginx -t and then restart nginx.
+
+### Installation of benchmarking tools
+
+Apache benchmark:
+
+```
+#apt-get install apache2-utils
+```

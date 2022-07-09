@@ -1,0 +1,53 @@
+WITH 1 static php-fpm pool
+
+Benchmarking loadtest-laravel.xxx (be patient)
+Completed 1000 requests
+Completed 2000 requests
+Completed 3000 requests
+Completed 4000 requests
+Completed 5000 requests
+Completed 6000 requests
+Completed 7000 requests
+Completed 8000 requests
+Completed 9000 requests
+Completed 10000 requests
+Finished 10000 requests
+
+
+Server Software:        nginx/1.18.0
+Server Hostname:        loadtest-laravel.xxx
+Server Port:            80
+
+Document Path:          /
+Document Length:        8212 bytes
+
+Concurrency Level:      1000
+Time taken for tests:   13.432 seconds
+Complete requests:      10000
+Failed requests:        9386
+   (Connect: 0, Receive: 0, Length: 9386, Exceptions: 0)
+Non-2xx responses:      9386
+Total transferred:      8797228 bytes
+HTML transferred:       6600244 bytes
+Requests per second:    744.48 [#/sec] (mean)
+Time per request:       1343.215 [ms] (mean)
+Time per request:       1.343 [ms] (mean, across all concurrent requests)
+Transfer rate:          639.59 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:       22   39   5.0     40      58
+Processing:    28  402 1676.9     35   11549
+Waiting:       28  401 1676.9     35   11549
+Total:         59  441 1676.5     76   11593
+
+Percentage of the requests served within a certain time (ms)
+  50%     76
+  66%     78
+  75%     81
+  80%     83
+  90%     88
+  95%   2017
+  98%   8143
+  99%  10669
+ 100%  11593 (longest request)
