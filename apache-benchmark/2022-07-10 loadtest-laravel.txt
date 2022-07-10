@@ -1,0 +1,56 @@
+
+Webdock-server running with 10 php instances to simulate 2 servers
+
+NOTE: Failed requests is logged in Nginx error-log as "Resource temporarily unavailable" ( for PHP-fpm )
+
+Benchmarking loadtest-laravel.xxx (be patient)
+Completed 1000 requests
+Completed 2000 requests
+Completed 3000 requests
+Completed 4000 requests
+Completed 5000 requests
+Completed 6000 requests
+Completed 7000 requests
+Completed 8000 requests
+Completed 9000 requests
+Completed 10000 requests
+Finished 10000 requests
+
+
+Server Software:        nginx/1.18.0
+Server Hostname:        loadtest-laravel.xxx
+Server Port:            80
+
+Document Path:          /
+Document Length:        8212 bytes
+
+Concurrency Level:      1000
+Time taken for tests:   4.066 seconds
+Complete requests:      10000
+Failed requests:        9199
+   (Connect: 0, Receive: 0, Length: 9199, Exceptions: 0)
+Non-2xx responses:      9199
+Total transferred:      10480602 bytes
+HTML transferred:       8104846 bytes
+Requests per second:    2459.13 [#/sec] (mean)
+Time per request:       406.648 [ms] (mean)
+Time per request:       0.407 [ms] (mean, across all concurrent requests)
+Transfer rate:          2516.91 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:       21   25   4.2     23      50
+Processing:    21  206 729.9     26    3626
+Waiting:       21  206 729.9     25    3626
+Total:         42  231 729.8     49    3652
+
+Percentage of the requests served within a certain time (ms)
+  50%     49
+  66%     55
+  75%     59
+  80%     63
+  90%     74
+  95%   1379
+  98%   3495
+  99%   3558
+ 100%   3652 (longest request)

@@ -1,0 +1,55 @@
+
+Webdock-server running with 10 node clusters to simulate 2 servers
+
+Node/Express is using production enviroment and compression (gzip)
+
+
+Benchmarking loadtest-node.xxx (be patient)
+Completed 1000 requests
+Completed 2000 requests
+Completed 3000 requests
+Completed 4000 requests
+Completed 5000 requests
+Completed 6000 requests
+Completed 7000 requests
+Completed 8000 requests
+Completed 9000 requests
+Completed 10000 requests
+Finished 10000 requests
+
+
+Server Software:        nginx/1.18.0
+Server Hostname:        loadtest-node.xxx
+Server Port:            80
+
+Document Path:          /
+Document Length:        6688 bytes
+
+Concurrency Level:      1000
+Time taken for tests:   3.542 seconds
+Complete requests:      10000
+Failed requests:        0
+Total transferred:      69460000 bytes
+HTML transferred:       66880000 bytes
+Requests per second:    2823.59 [#/sec] (mean)
+Time per request:       354.159 [ms] (mean)
+Time per request:       0.354 [ms] (mean, across all concurrent requests)
+Transfer rate:          19153.01 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:       21   23   4.3     21      44
+Processing:    44  314 219.8    258    1403
+Waiting:       26  313 219.8    258    1403
+Total:         73  336 223.5    280    1445
+
+Percentage of the requests served within a certain time (ms)
+  50%    280
+  66%    306
+  75%    340
+  80%    348
+  90%    379
+  95%    433
+  98%   1352
+  99%   1394
+ 100%   1445 (longest request)
