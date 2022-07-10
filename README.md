@@ -30,15 +30,18 @@ CLUSTER_INSTANCES=5
 NODE_ENV=production
 ```
 
+Make sure to set NODE_ENV to production - or else Express will not compact the requests, some debug-data is sent also.
+
 Next setup the Nginx-configuration with an upstream proxy (replace "[YOUR DOMAIN HERE]" with your domain though):
 
 ```
 upstream app1 {
+		# session persistance
+		ip_hash;
+
+		# upstream / loadbalance to which servers
         server 127.0.0.1:9000;
         server 127.0.0.1:9001;
-        server 127.0.0.1:9002;
-        server 127.0.0.1:9003;
-        server 127.0.0.1:9004;
 }
 
 server {
@@ -49,6 +52,15 @@ server {
 
         location / {
                 proxy_pass http://app1;
+
+                # forward ip from client
+  				proxy_set_header X-Real-IP   $remote_addr;
+  				proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+                # If using websocket we need http 1.1
+    			#proxy_http_version 1.1;
+    			#proxy_set_header Upgrade $http_upgrade;
+    			#proxy_set_header Connection $connection_upgrade;                
         }
 
 }
