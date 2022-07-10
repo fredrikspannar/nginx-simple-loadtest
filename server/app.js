@@ -1,5 +1,6 @@
 import express from 'express';
 import { engine } from 'express-handlebars';
+import compression from 'compression';
 
 const app = express();
 import data from './../techcrunch-top-articles-2022-07-07.json' assert {type: 'json'};
@@ -12,6 +13,7 @@ export function serverApp(port) {
 
     // setup static files
     app.use(express.static('public'));
+    app.use(compression()); // setup gzip compression
 
     // default route
     app.get('/', (req, res) => {

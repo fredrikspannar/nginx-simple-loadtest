@@ -18,17 +18,16 @@ Install all dependencies with:
 ```
 
 ### Configuration
+
 Create an .env in the root directory of the cloned branch with the appropiate number of ports which will span that number of instances, you should probably use all 5 to span 5 instances
 so it is somewhat similar to the PHP backend.
 
 Example .env:
 
 ```
-LOADTEST_PORT1=9000
-LOADTEST_PORT2=9001
-LOADTEST_PORT3=9002
-LOADTEST_PORT4=9003
-LOADTEST_PORT5=9004
+PORT=9000
+CLUSTER_INSTANCES=5
+NODE_ENV=production
 ```
 
 Next setup the Nginx-configuration with an upstream proxy (replace "[YOUR DOMAIN HERE]" with your domain though):
